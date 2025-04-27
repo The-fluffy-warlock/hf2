@@ -30,6 +30,17 @@ INSERT [dbo].[Ugyfel] ([LOGIN], [EMAIL], [NEV], [SZULEV], [NEM], [CIM]) VALUES (
 
 
 
+CREATE USER MaskUser WITHOUT Login;
+GRANT SELECT ON Ugyfel TO MaskUser
+
+
+
+
+
+EXECUTE AS User= 'MaskUser';
+SELECT * FROM Ugyfel
+REVERT
+
 
 
 
